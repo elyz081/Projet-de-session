@@ -4,5 +4,6 @@ from methodes.Model import Model
 
 class ArbreDecision(Model):
     def __init__(self):
-        super().__init__(DecisionTreeClassifier())
-        self.name = "Arbre Decision"
+        super().__init__(DecisionTreeClassifier(), "Decision Tree")
+        self.params_grid = {'criterion': ["entropy", "gini","log_loss"],
+                            'max_depth': [2, 3, 4, 5, 6, 10]}
