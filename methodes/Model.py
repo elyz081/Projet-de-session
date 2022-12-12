@@ -7,7 +7,7 @@ class Model:
         self.name = name
 
 
-    def train(self,X_train,Y_train):
+    def train(self, X_train, Y_train):
         self.model.fit(X_train, Y_train)
 
     def predict(self, X):
