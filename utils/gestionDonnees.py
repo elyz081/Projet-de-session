@@ -17,6 +17,7 @@ class GestionDonnees:
         X_train = train.drop(['species', 'id'], axis=1) 
         if normal:
             X_train = StandardScaler().fit_transform(X_train) 
+            X_train=pd.DataFrame(X_train)
         return X_train,y_train
 
     def charger_test(self,normal=False):
