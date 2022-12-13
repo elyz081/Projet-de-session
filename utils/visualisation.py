@@ -3,6 +3,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def visualize(ac_before,ac_after):
+    """
+    param ac_before: Dict of model's accuracies before data scalling
+    param ac_after:  Dict of model's accuracies after data scalling
+    """
 
     models= ac_before.keys()
 

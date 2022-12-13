@@ -19,7 +19,13 @@ class Model:
 
 
     def tuning(self,param_grid,X_train, y_train,show_grid=False):
-
+        """
+        this function is the process of determining the right combination of hyperparameters that maximizes the model performance
+        Inputs:
+        - param_grid (dict) : grid that contains the parameters of the model
+        - X_train (dataframe) : training data
+        - Y_train (array) : training labels
+        """
         print("---------------Searching for hyper-parameters---------------- ")
         clf = GridSearchCV(self.model,param_grid, cv=5,scoring='accuracy')
         clf.fit(X_train, y_train)
@@ -35,8 +41,13 @@ class Model:
         self.score_after=clf.best_score_
 
     
-    def crossed_validation(self, X_train, y_train):   
-  
+    def crossed_validation(self, X_train, y_train):
+            """
+             this function computes average accuracy 
+             - X_train (dataframe) : training data
+             - Y_train (array) : training labels
+            """
+
             print("------------Crossed Validation :--------------- ")
             sss = StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=21) 
             i=1

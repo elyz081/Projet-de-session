@@ -10,6 +10,11 @@ class GestionDonnees:
         self.species = []
 
     def charger_donnees(self, normal=False):
+        """
+
+        :param normal: scalling data
+        :return: X_train, Y_train
+        """
         train = pd.read_csv(self.train) 
         le = LabelEncoder().fit(train.species) 
         self.species = list(le.classes_)
@@ -21,6 +26,11 @@ class GestionDonnees:
         return X_train,y_train
 
     def charger_test(self,normal=False):
+        """
+
+        :param normal: scalling data
+        :return: X_test, id_test
+        """
         test = pd.read_csv(self.test) 
         id_test = test.id    
         X_test = test.drop(['id'], axis=1)
